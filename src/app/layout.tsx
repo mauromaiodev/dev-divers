@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-white${inter.className}`}>
+      <body className={`bg-primary text-secondary ${inter.className}`}>
         <div className="flex">
           <SideNav />
           <main className="flex-1">

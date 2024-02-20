@@ -11,17 +11,17 @@ import { Icon } from '@iconify/react';
 
 const SideNav = () => {
   return (
-    <div className="md:w-60 bg-white h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+    <div className="md:w-60 dark:border-neutral-700 h-screen flex-1 fixed border-r hidden md:flex">
       <div className="flex flex-col space-y-6 w-full">
         <Link
           href="/"
-          className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-12 w-full"
+          className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b h-12 w-full dark:border-neutral-700"
         >
           <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
-          <span className="font-bold text-xl hidden md:flex">Logo</span>
+          <span className="font-bold text-xl hidden md:flex">DevDivers</span>
         </Link>
 
-        <div className="flex flex-col space-y-2  md:px-6 ">
+        <div className="flex flex-col space-y-2 md:px-6 ">
           {SIDENAV_ITEMS.map((item, idx) => {
             return <MenuItem key={idx} item={item} />;
           })}
@@ -46,8 +46,8 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
         <>
           <button
             onClick={toggleSubMenu}
-            className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 ${
-              pathname.includes(item.path) ? 'bg-zinc-100' : ''
+            className={`flex flex-row items-center p-2 rounded-lg hover-bg-hoverBackground w-full justify-between hover:bg-hoverBackground${
+              pathname.includes(item.path) ? 'bg-hoverBackground' : ''
             }`}
           >
             <div className="flex flex-row space-x-4 items-center">
@@ -81,8 +81,8 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
       ) : (
         <Link
           href={item.path}
-          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-zinc-100 ${
-            item.path === pathname ? 'bg-zinc-100' : ''
+          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-hoverBackground ${
+            item.path === pathname ? 'bg-hoverBackground' : ''
           }`}
         >
           {item.icon}

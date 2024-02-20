@@ -21,17 +21,17 @@ const sidebar = {
     transition: {
       type: 'spring',
       stiffness: 20,
-      restDelta: 2,
-    },
+      restDelta: 2
+    }
   }),
   closed: {
     clipPath: 'circle(0px at 100% 0)',
     transition: {
       type: 'spring',
       stiffness: 400,
-      damping: 40,
-    },
-  },
+      damping: 40
+    }
+  }
 };
 
 const HeaderMobile = () => {
@@ -51,7 +51,7 @@ const HeaderMobile = () => {
       ref={containerRef}
     >
       <motion.div
-        className="absolute inset-0 right-0 w-full bg-white"
+        className="absolute inset-0 right-0 w-full bg-primary"
         variants={sidebar}
       />
       <motion.ul
@@ -59,7 +59,7 @@ const HeaderMobile = () => {
         className="absolute grid w-full gap-3 px-10 py-16"
       >
         {SIDENAV_ITEMS.map((item, idx) => {
-          const isLastItem = idx === SIDENAV_ITEMS.length - 1; // Check if it's the last item
+          const isLastItem = idx === SIDENAV_ITEMS.length - 1;
 
           return (
             <div key={idx}>
@@ -102,21 +102,21 @@ const MenuToggle = ({ toggle }: { toggle: any }) => (
       <Path
         variants={{
           closed: { d: 'M 2 2.5 L 20 2.5' },
-          open: { d: 'M 3 16.5 L 17 2.5' },
+          open: { d: 'M 3 16.5 L 17 2.5' }
         }}
       />
       <Path
         d="M 2 9.423 L 20 9.423"
         variants={{
           closed: { opacity: 1 },
-          open: { opacity: 0 },
+          open: { opacity: 0 }
         }}
         transition={{ duration: 0.1 }}
       />
       <Path
         variants={{
           closed: { d: 'M 2 16.346 L 20 16.346' },
-          open: { d: 'M 3 2.5 L 17 16.346' },
+          open: { d: 'M 3 2.5 L 17 16.346' }
         }}
       />
     </svg>
@@ -135,7 +135,7 @@ const Path = (props: any) => (
 
 const MenuItem = ({
   className,
-  children,
+  children
 }: {
   className?: string;
   children?: ReactNode;
@@ -149,7 +149,7 @@ const MenuItem = ({
 
 const MenuItemWithSubMenu: React.FC<MenuItemWithSubMenuProps> = ({
   item,
-  toggleOpen,
+  toggleOpen
 }) => {
   const pathname = usePathname();
   const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -203,26 +203,26 @@ const MenuItemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
+      y: { stiffness: 1000, velocity: -100 }
+    }
   },
   closed: {
     y: 50,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
-      duration: 0.02,
-    },
-  },
+      duration: 0.02
+    }
+  }
 };
 
 const variants = {
   open: {
-    transition: { staggerChildren: 0.02, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.02, delayChildren: 0.15 }
   },
   closed: {
-    transition: { staggerChildren: 0.01, staggerDirection: -1 },
-  },
+    transition: { staggerChildren: 0.01, staggerDirection: -1 }
+  }
 };
 
 const useDimensions = (ref: any) => {

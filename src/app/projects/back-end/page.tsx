@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProjectsPage = () => {
+const BackEndPage = () => {
   return (
     <>
-      <span className="font-bold text-4xl">Projetos</span>
+      <span className="font-bold text-4xl">Back-End</span>
 
       <div className="border-dashed border border-zinc-500 w-full h-12 rounded-lg"></div>
       <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
@@ -11,4 +11,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default BackEndPage;
