@@ -15,10 +15,11 @@ const Header = () => {
   return (
     <div
       className={cn(
-        `sticky inset-x-0 top-0 z-30 w-full transition-all border-b border-gray-200`,
+        `sticky inset-x-0 top-0 z-30 w-full transition-all border-b dark:border-neutral-700 bg-primary`,
         {
-          'border-b border-gray-200 bg-white/75 backdrop-blur-lg': scrolled,
-          'border-b border-gray-200 bg-white': selectedLayout
+          'border-b dark:border-neutral-700 bg-primary/75 backdrop-blur-lg':
+            scrolled,
+          'border-b dark:border-neutral-700 bg-primary': selectedLayout
         }
       )}
     >
@@ -34,8 +35,8 @@ const Header = () => {
         </div>
 
         <div className="hidden md:block">
-          <div className="h-8 w-8 rounded-full bg-zinc-300 flex items-center justify-center text-center">
-            <span className="font-semibold text-sm">MaruDev</span>
+          <div className="h-8 w-8 rounded-full bg-hoverBackground flex items-center justify-center text-center">
+            <span className="font-semibold text-sm">MM</span>
           </div>
         </div>
       </div>
