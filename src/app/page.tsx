@@ -7,6 +7,7 @@ export default function Home() {
         copiar e colar em seus aplicativos. Acessível. Customizável. Código
         aberto.
       </div>
+      <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
     </>
   );
 }
