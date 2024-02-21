@@ -7,6 +7,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 
 import useScroll from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
+import DevIcon from './icons/dev-logo';
 
 const Header = () => {
   const scrolled = useScroll(5);
@@ -29,7 +30,7 @@ const Header = () => {
             href="/"
             className="flex flex-row space-x-3 items-center justify-center md:hidden"
           >
-            <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
+            <DevIcon className="w-7 h-7" />
             <span className="font-bold text-xl flex ">DevDivers</span>
           </Link>
         </div>

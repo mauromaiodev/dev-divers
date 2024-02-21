@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { SIDENAV_ITEMS } from '@/constants';
 import { SideNavItem } from '@/types';
 import { Icon } from '@iconify/react';
+import DevIcon from './icons/dev-logo';
 
 const SideNav = () => {
   return (
@@ -17,7 +18,7 @@ const SideNav = () => {
           href="/"
           className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b h-12 w-full dark:border-neutral-700"
         >
-          <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
+          <DevIcon className="w-7 h-7" />
           <span className="font-bold text-xl hidden md:flex">DevDivers</span>
         </Link>
 
