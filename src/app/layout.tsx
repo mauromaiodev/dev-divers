@@ -8,6 +8,7 @@ import HeaderMobile from '@/components/header-mobile';
 import MarginWidthWrapper from '@/components/margin-width-wrapper';
 import PageWrapper from '@/components/page-wrapper';
 import SideNav from '@/components/side-nav';
+import { SideNavProvider } from '@/contexts/SideNavContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,16 +25,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-primary text-secondary ${inter.className}`}>
-        <div className="flex">
-          <SideNav />
-          <main className="flex-1">
-            <MarginWidthWrapper>
-              <Header />
-              <HeaderMobile />
-              <PageWrapper>{children}</PageWrapper>
-            </MarginWidthWrapper>
-          </main>
-        </div>
+        <SideNavProvider>
+          <div className="flex">
+            <SideNav />
+            <main className="flex-1">
+              <MarginWidthWrapper>
+                <Header />
+                <HeaderMobile />
+                <PageWrapper>{children}</PageWrapper>
+              </MarginWidthWrapper>
+            </main>
+          </div>
+        </SideNavProvider>
       </body>
     </html>
   );
