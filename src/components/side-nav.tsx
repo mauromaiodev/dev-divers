@@ -16,7 +16,7 @@ const SideNav = () => {
 
   return (
     <div
-      className={`${open ? 'md:w-60' : 'md:w-16'} dark:border-neutral-700 h-screen flex-1 fixed border-r hidden md:flex duration-300`}
+      className={`${open ? 'md:w-60' : 'md:w-20'} dark:border-neutral-700 h-screen flex-1 fixed border-r hidden md:flex duration-300`}
     >
       <div className="flex flex-col space-y-6 w-full">
         <Link
@@ -32,7 +32,7 @@ const SideNav = () => {
         </Link>
 
         <div
-          className={`flex flex-col space-y-2 ${open ? 'md:px-6' : 'md:px-3'}`}
+          className={`flex flex-col space-y-2 ${open ? 'md:px-6' : 'md:px-5'}`}
         >
           {SIDENAV_ITEMS.map((item, index) => {
             return <MenuItem key={index} item={item} />;
@@ -42,7 +42,9 @@ const SideNav = () => {
             className={`flex absolute -right-2.5 -translate-y-1/2 bg-zinc-700 rounded-full hover-bg-hoverBackground hover:bg-hoverBackground 
           }`}
           >
-            <div className={`${open ? 'rotate-180' : ''}`}>
+            <div
+              className={`transform transition-transform duration-500 ease-in-out ${open ? 'rotate-180' : ''}`}
+            >
               <Icon icon="lucide:chevron-right" width="24" height="24" />
             </div>
           </button>
@@ -79,7 +81,9 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
               )}
             </div>
 
-            <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
+            <div
+              className={`transform transition-transform duration-500 ease-in-out ${subMenuOpen ? 'rotate-180' : ''} flex`}
+            >
               <Icon icon="lucide:chevron-down" width="24" height="24" />
             </div>
           </button>
