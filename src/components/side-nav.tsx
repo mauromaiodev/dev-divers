@@ -16,16 +16,16 @@ const SideNav = () => {
 
   return (
     <div
-      className={`${open ? 'md:w-60' : 'md:w-20'} dark:border-neutral-700 h-screen flex-1 fixed border-r hidden md:flex duration-300`}
+      className={`${open ? 'md:w-60' : 'md:w-20'} fixed hidden h-screen flex-1 border-r duration-300 md:flex dark:border-neutral-700`}
     >
-      <div className="flex flex-col space-y-6 w-full">
+      <div className="flex w-full flex-col space-y-6">
         <Link
           href="/"
-          className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b h-12 w-full dark:border-neutral-700"
+          className="flex h-12 w-full flex-row items-center justify-center space-x-3 border-b md:justify-start md:px-6 dark:border-neutral-700"
         >
-          <DevIcon className="w-7 h-7" />
+          <DevIcon className="h-7 w-7" />
           {open && (
-            <span className={`font-bold text-xl hidden md:flex`}>
+            <span className={`hidden text-xl font-bold md:flex`}>
               DevDivers
             </span>
           )}
@@ -39,8 +39,7 @@ const SideNav = () => {
           })}
           <button
             onClick={toggleCollapse}
-            className={`flex absolute -right-2.5 -translate-y-1/2 bg-zinc-700 rounded-full hover-bg-hoverBackground hover:bg-hoverBackground 
-          }`}
+            className={`hover-bg-hoverBackground } absolute -right-2.5 flex -translate-y-1/2 rounded-full bg-zinc-700 hover:bg-hoverBackground`}
           >
             <div
               className={`transform transition-transform duration-500 ease-in-out ${open ? 'rotate-180' : ''}`}
@@ -65,19 +64,19 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex w-full flex-col">
       {item.submenu ? (
         <>
           <button
             onClick={toggleSubMenu}
-            className={`flex flex-row items-center p-2 rounded-lg hover-bg-hoverBackground w-full justify-between hover:bg-hoverBackground ${
+            className={`hover-bg-hoverBackground flex w-full flex-row items-center justify-between rounded-lg p-2 hover:bg-hoverBackground ${
               pathname.includes(item.path) ? 'bg-hoverBackground' : ''
             }`}
           >
-            <div className="flex flex-row space-x-4 items-center">
+            <div className="flex flex-row items-center space-x-4">
               {item.icon}
               {open && (
-                <span className="font-semibold text-xl flex">{item.title}</span>
+                <span className="flex text-xl font-semibold">{item.title}</span>
               )}
             </div>
 
@@ -109,13 +108,13 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
       ) : (
         <Link
           href={item.path}
-          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-hoverBackground ${
+          className={`flex flex-row items-center space-x-4 rounded-lg p-2 hover:bg-hoverBackground ${
             item.path === pathname ? 'bg-hoverBackground' : ''
           }`}
         >
           {item.icon}
           {open && (
-            <span className="font-semibold text-xl flex">{item.title}</span>
+            <span className="flex text-xl font-semibold">{item.title}</span>
           )}
         </Link>
       )}
